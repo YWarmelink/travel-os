@@ -8,7 +8,7 @@ Nothing concrete queued yet — pick this up during the planned brainstorm with 
 
 ## Planned features
 
-Agreed direction (2026-07 brainstorm), not yet designed or scheduled:
+Agreed direction (2026-07 brainstorm), not yet designed or scheduled. **Criterion for this section: buildable with the current stack, no blocking dependency** — nothing here needs to wait on something bigger below.
 
 - **Car as a transport option, chosen per trip** — a user-selectable preference (not automatic), similar to the existing "Flight range" filter. Needs a second cost model alongside `flightLegCost()`: not per-traveler like flights, but a shared-per-car cost (fuel/tolls/ferry), the same pattern YourAtlas' Route Builder already uses for its self-driven expeditions (Central European Grand Roadtrip, British Isles & Celtic Coast). Only meaningful for countries actually reachable by car from NL — not a replacement for flights everywhere.
 - **Small/weekend trips from NL don't work well today** — likely cause (unverified against the live Sheet, but consistent with what's visible locally): `min_days` per country is set assuming a proper multi-day vacation, so a 2-day weekend trip may not have a valid duration to rank at all, regardless of budget. Fix goes directly into the main ranking (not a separate mode like 🎯 Ideal trip): lower `min_days` for nearby/cheap countries where a short trip genuinely makes sense, so weekend trips compete in the normal ranking rather than needing their own filter. Pairs naturally with the car option above — removing the fixed flight-cost floor is what makes a small budget viable for nearby countries in the first place.
@@ -19,6 +19,8 @@ Agreed direction (2026-07 brainstorm), not yet designed or scheduled:
 - **"Surprise me" button** — occasionally suggest a wildcard trip outside the usual top-ranked results (e.g. from the bottom half, or a country not recently suggested), for spontaneity. Just a different sampling over the already-computed ranked list, no new data.
 
 ## Long-term / someday
+
+**Criterion for this section: either blocked on something else in this same section, or too large-scope to start without its own dedicated design discussion first.** Not "less important" — just not startable yet.
 
 - **Self-hosted personal AI, integrated** — deliberately small and vague on purpose: for personal use only, not a product, explicitly scoped down so it doesn't balloon into its own project. No design yet — revisit only if/when it's still interesting, keep it small when it happens.
 
